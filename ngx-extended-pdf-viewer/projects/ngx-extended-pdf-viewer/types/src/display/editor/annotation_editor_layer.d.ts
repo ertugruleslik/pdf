@@ -43,7 +43,7 @@ export type RenderEditorLayerOptions = {
  */
 export class AnnotationEditorLayer {
     static _initialized: boolean;
-    static "__#22@#editorTypes": Map<number, typeof FreeTextEditor | typeof HighlightEditor | typeof InkEditor | typeof StampEditor>;
+    static "__#26@#editorTypes": Map<number, typeof FreeTextEditor | typeof HighlightEditor | typeof InkEditor | typeof StampEditor>;
     /**
      * @param {AnnotationEditorLayerOptions} options
      */
@@ -63,6 +63,7 @@ export class AnnotationEditorLayer {
      * @param {number} mode
      */
     updateMode(mode?: number): void;
+    hasTextLayer(textLayer: any): boolean;
     addInkEditorIfNeeded(isCommitting: any): void;
     /**
      * Set the editing state.
@@ -75,6 +76,7 @@ export class AnnotationEditorLayer {
      */
     addCommands(params: Object): void;
     togglePointerEvents(enabled?: boolean): void;
+    toggleAnnotationLayerPointerEvents(enabled?: boolean): void;
     /**
      * Enable pointer events on the main div in order to enable
      * editor creation.
@@ -143,6 +145,14 @@ export class AnnotationEditorLayer {
     deserialize(data: Object): AnnotationEditor | null;
     /**
      * Create and add a new editor.
+     * @param {PointerEvent} event
+     * @param {boolean} isCentered
+     * @param [Object] data
+     * @returns {AnnotationEditor}
+     */
+    createAndAddNewEditor(event: PointerEvent, isCentered: boolean, data?: {}): AnnotationEditor;
+    /**
+     * Create and add a new editor.
      */
     addNewEditor(): void;
     /**
@@ -165,17 +175,6 @@ export class AnnotationEditorLayer {
      * @param {AnnotationEditor} editor
      */
     unselect(editor: AnnotationEditor): void;
-    /**
-     * SelectionChange callback.
-     * @param {Event} _event
-     */
-    selectionStart(_event: Event): void;
-    /**
-     * Called when the user releases the mouse button after having selected
-     * some text.
-     * @param {PointerEvent} event
-     */
-    pointerUpAfterSelection(event: PointerEvent): void;
     /**
      * Pointerup callback.
      * @param {PointerEvent} event
@@ -213,6 +212,7 @@ export class AnnotationEditorLayer {
      * @returns {Object} dimensions.
      */
     get pageDimensions(): Object;
+    get scale(): number;
     setCleaningUp(isCleaningUp: any): void;
     #private;
 }

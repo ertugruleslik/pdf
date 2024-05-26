@@ -1,5 +1,5 @@
 export class EditorToolbar {
-    static "__#29@#pointerDown"(e: any): void;
+    static "__#33@#pointerDown"(e: any): void;
     constructor(editor: any);
     render(): HTMLDivElement;
     hide(): void;

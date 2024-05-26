@@ -11,11 +11,12 @@ export class FreeTextEditor extends AnnotationEditor {
     static _type: string;
     static _editorType: number;
     /** @inheritdoc */
-    static initialize(l10n: any): void;
+    static initialize(l10n: any, uiManager: any): void;
     /** @inheritdoc */
     static updateDefaultParams(type: any, value: any): void;
     /** @inheritdoc */
     static get defaultPropertiesToUpdate(): any[][];
+    static "__#16@#deserializeContent"(content: any): any;
     /** @inheritdoc */
     static deserialize(data: any, parent: any, uiManager: any): AnnotationEditor | null;
     constructor(params: any);

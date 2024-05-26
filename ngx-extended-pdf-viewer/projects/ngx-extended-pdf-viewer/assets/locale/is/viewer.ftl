@@ -301,8 +301,9 @@ pdfjs-editor-ink-button-label = Teikna
 pdfjs-editor-stamp-button =
     .title = Bæta við eða breyta myndum
 pdfjs-editor-stamp-button-label = Bæta við eða breyta myndum
-pdfjs-editor-remove-button =
-    .title = Fjarlægja
+pdfjs-editor-highlight-button =
+    .title = Áherslulita
+pdfjs-editor-highlight-button-label = Áherslulita
 
 ## Remove button for the various kind of editor.
 
@@ -326,6 +327,10 @@ pdfjs-editor-ink-opacity-input = Ógegnsæi
 pdfjs-editor-stamp-add-image-button =
     .title = Bæta við mynd
 pdfjs-editor-stamp-add-image-button-label = Bæta við mynd
+# This refers to the thickness of the line used for free highlighting (not bound to text)
+pdfjs-editor-free-highlight-thickness-input = Þykkt
+pdfjs-editor-free-highlight-thickness-title =
+    .title = Breyta þykkt við áherslulitun annarra atriða en texta
 pdfjs-free-text =
     .aria-label = Textaritill
 pdfjs-free-text-default-content = Byrjaðu að skrifa…
@@ -383,11 +388,6 @@ pdfjs-editor-colorpicker-pink =
 pdfjs-editor-colorpicker-red =
     .title = Rautt
 
-pdfjs-editor-highlight-button =
-    .title = Áherslulita
-pdfjs-editor-highlight-button-label = Áherslulita
-pdfjs-editor-free-highlight-thickness-input = Þykkt
-pdfjs-editor-free-highlight-thickness-title =
-    .title = Breyta þykkt við áherslulitun annarra atriða en texta
+pdfjs-editor-highlight-show-all-button-label = Show all
 unverified-signature-warning = This PDF file contains a digital signature. The PDF viewer can't verify if the signature is valid. Please download the file and open it in Acrobat Reader to verify the signature is valid.
 pdfjs-infinite-scroll-button-label = Infinite scroll

@@ -283,12 +283,21 @@ pdfjs-editor-free-text-button-label = متن
 pdfjs-editor-ink-button =
     .title = چھکو
 pdfjs-editor-ink-button-label = چھکو
+
+## Remove button for the various kind of editor.
+
+
+##
+
 # Editor Parameters
 pdfjs-editor-free-text-color-input = رنگ
 pdfjs-editor-free-text-size-input = سائز
 pdfjs-editor-ink-color-input = رنگ
 pdfjs-editor-ink-thickness-input = ٹھولھ
 pdfjs-editor-ink-opacity-input = دھندلاپن
+pdfjs-editor-stamp-add-image-button =
+    .title = تصویر شامل کرو
+pdfjs-editor-stamp-add-image-button-label = تصویر شامل کرو
 pdfjs-free-text =
     .aria-label = ٹیکسٹ ایڈیٹر
 pdfjs-free-text-default-content = ٹائپنگ شروع کرو …
@@ -304,9 +313,8 @@ pdfjs-ink-canvas =
 ## This is used in an aria label to help to understand the role of the resizer.
 
 
-pdfjs-editor-stamp-add-image-button =
-    .title = تصویر شامل کرو
-pdfjs-editor-stamp-add-image-button-label = تصویر شامل کرو
+## Color picker
+
 pdfjs-editor-colorpicker-yellow =
     .title = پیلا
 pdfjs-editor-colorpicker-green =
@@ -317,6 +325,7 @@ pdfjs-editor-colorpicker-pink =
     .title = گلابی
 pdfjs-editor-colorpicker-red =
     .title = لال
+
 pdfjs-find-match-count =
     { $total ->
         [one] { $current } of { $total } match
@@ -370,5 +379,6 @@ pdfjs-editor-colorpicker-button =
     .title = Change color
 pdfjs-editor-colorpicker-dropdown =
     .aria-label = Color choices
+pdfjs-editor-highlight-show-all-button-label = Show all
 unverified-signature-warning = This PDF file contains a digital signature. The PDF viewer can't verify if the signature is valid. Please download the file and open it in Acrobat Reader to verify the signature is valid.
 pdfjs-infinite-scroll-button-label = Infinite scroll

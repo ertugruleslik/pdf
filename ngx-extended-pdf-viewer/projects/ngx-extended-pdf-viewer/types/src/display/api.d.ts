@@ -1,5 +1,4 @@
 export type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array;
-export type BinaryData = TypedArray | ArrayBuffer | Array<number> | string;
 export type RefProxy = {
     num: number;
     gen: number;
@@ -13,7 +12,8 @@ export type DocumentInitParameters = {
      */
     url?: string | URL | undefined;
     /**
-     * - Binary PDF data.
+     * -
+     * Binary PDF data.
      * Use TypedArrays (Uint8Array) to improve the memory usage. If PDF data is
      * BASE64-encoded, use `atob()` to convert it to a binary string first.
      *
@@ -21,7 +21,7 @@ export type DocumentInitParameters = {
      * worker-thread. This will help reduce main-thread memory usage, however
      * it will take ownership of the TypedArrays.
      */
-    data?: BinaryData | undefined;
+    data?: string | number[] | ArrayBuffer | TypedArray | undefined;
     /**
      * - Basic authentication headers.
      */
@@ -530,9 +530,6 @@ export const DefaultStandardFontDataFactory: typeof NodeStandardFontDataFactory;
  * } TypedArray
  */
 /**
- * @typedef { TypedArray | ArrayBuffer | Array<number> | string } BinaryData
- */
-/**
  * @typedef {Object} RefProxy
  * @property {number} num
  * @property {number} gen
@@ -542,7 +539,8 @@ export const DefaultStandardFontDataFactory: typeof NodeStandardFontDataFactory;
  *
  * @typedef {Object} DocumentInitParameters
  * @property {string | URL} [url] - The URL of the PDF.
- * @property {BinaryData} [data] - Binary PDF data.
+ * @property {TypedArray | ArrayBuffer | Array<number> | string} [data] -
+ *   Binary PDF data.
  *   Use TypedArrays (Uint8Array) to improve the memory usage. If PDF data is
  *   BASE64-encoded, use `atob()` to convert it to a binary string first.
  *
@@ -736,7 +734,7 @@ export class PDFDataRangeTransport {
  * after which individual pages can be rendered.
  */
 export class PDFDocumentLoadingTask {
-    static "__#39@#docId": number;
+    static "__#44@#docId": number;
     _capability: PromiseCapability;
     _transport: any;
     _worker: any;
@@ -1334,7 +1332,7 @@ export class PDFPageProxy {
  * @param {PDFWorkerParameters} params - The worker initialization parameters.
  */
 export class PDFWorker {
-    static "__#42@#workerPorts": any;
+    static "__#47@#workerPorts": any;
     /**
      * @param {PDFWorkerParameters} params - The worker initialization parameters.
      */
@@ -1344,7 +1342,7 @@ export class PDFWorker {
      * @type {string}
      */
     static get workerSrc(): string;
-    static get "__#42@#mainThreadWorkerMessageHandler"(): any;
+    static get "__#47@#mainThreadWorkerMessageHandler"(): any;
     static get _setupFakeWorkerGlobal(): any;
     constructor({ name, port, verbosity, }?: {
         name?: null | undefined;

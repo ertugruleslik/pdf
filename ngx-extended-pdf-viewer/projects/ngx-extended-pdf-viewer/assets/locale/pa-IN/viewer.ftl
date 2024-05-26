@@ -301,8 +301,9 @@ pdfjs-editor-ink-button-label = ਵਾਹੋ
 pdfjs-editor-stamp-button =
     .title = ਚਿੱਤਰ ਜੋੜੋ ਜਾਂ ਸੋਧੋ
 pdfjs-editor-stamp-button-label = ਚਿੱਤਰ ਜੋੜੋ ਜਾਂ ਸੋਧੋ
-pdfjs-editor-remove-button =
-    .title = ਹਟਾਓ
+pdfjs-editor-highlight-button =
+    .title = ਹਾਈਲਾਈਟ
+pdfjs-editor-highlight-button-label = ਹਾਈਲਾਈਟ
 
 ## Remove button for the various kind of editor.
 
@@ -312,6 +313,8 @@ pdfjs-editor-remove-freetext-button =
     .title = ਲਿਖਤ ਨੂੰ ਹਟਾਓ
 pdfjs-editor-remove-stamp-button =
     .title = ਚਿੱਤਰ ਨੂੰ ਹਟਾਓ
+pdfjs-editor-remove-highlight-button =
+    .title = ਹਾਈਲਾਈਟ ਨੂੰ ਹਟਾਓ
 
 ##
 
@@ -324,6 +327,8 @@ pdfjs-editor-ink-opacity-input = ਧੁੰਦਲਾਪਨ
 pdfjs-editor-stamp-add-image-button =
     .title = ਚਿੱਤਰ ਜੋੜੋ
 pdfjs-editor-stamp-add-image-button-label = ਚਿੱਤਰ ਜੋੜੋ
+# This refers to the thickness of the line used for free highlighting (not bound to text)
+pdfjs-editor-free-highlight-thickness-input = ਮੋਟਾਈ
 pdfjs-free-text =
     .aria-label = ਲਿਖਤ ਐਡੀਟਰ
 pdfjs-free-text-default-content = …ਲਿਖਣਾ ਸ਼ੁਰੂ ਕਰੋ
@@ -362,12 +367,9 @@ pdfjs-editor-resizer-label-bottom-middle = ਹੇਠਾਂ ਮੱਧ — ਮੁ�
 pdfjs-editor-resizer-label-bottom-left = ਹੇਠਾਂ ਖੱਬਾ ਕੋਨਾ — ਮੁੜ-ਆਕਾਰ ਕਰੋ
 pdfjs-editor-resizer-label-middle-left = ਮੱਧ ਖੱਬਾ — ਮੁੜ-ਆਕਾਰ ਕਰੋ
 
-pdfjs-editor-highlight-button =
-    .title = ਹਾਈਲਾਈਟ
-pdfjs-editor-highlight-button-label = ਹਾਈਲਾਈਟ
-pdfjs-editor-remove-highlight-button =
-    .title = ਹਾਈਲਾਈਟ ਨੂੰ ਹਟਾਓ
-pdfjs-editor-free-highlight-thickness-input = ਮੋਟਾਈ
+## Color picker
+
+# This means "Color used to highlight text"
 pdfjs-editor-highlight-colorpicker-label = ਹਾਈਟਲਾਈਟ ਦਾ ਰੰਗ
 pdfjs-editor-colorpicker-button =
     .title = ਰੰਗ ਨੂੰ ਬਦਲੋ
@@ -383,7 +385,9 @@ pdfjs-editor-colorpicker-pink =
     .title = ਗੁਲਾਬੀ
 pdfjs-editor-colorpicker-red =
     .title = ਲਾਲ
+
 pdfjs-editor-free-highlight-thickness-title =
     .title = Change thickness when highlighting items other than text
+pdfjs-editor-highlight-show-all-button-label = Show all
 unverified-signature-warning = This PDF file contains a digital signature. The PDF viewer can't verify if the signature is valid. Please download the file and open it in Acrobat Reader to verify the signature is valid.
 pdfjs-infinite-scroll-button-label = Infinite scroll
