@@ -1,0 +1,30 @@
+<div>
+  <button mat-raised-button color="primary" (click)="exportAnnotations()" style="margin-left: 16px">Export annotations</button>
+  <button mat-raised-button color="primary" (click)="addTextEditor()" style="margin-left: 16px">Add text editor</button>
+  <button mat-raised-button color="primary" (click)="addDrawing()" style="margin-left: 16px">Add drawing</button>
+  <button mat-raised-button color="primary" (click)="removeEditors()" style="margin-left: 16px">Remove editors</button>
+  <button mat-raised-button color="primary" (click)="removeTextEditors()" style="margin-left: 16px">Remove text editors</button>
+  <button mat-raised-button color="primary" (click)="removeDrawingEditors()" style="margin-left: 16px">Remove drawings</button>
+  rrey
+</div>
+
+<div class="distance16">
+  <div *ngIf="rawAnnotations">
+    <p>You can edit the annotations. Click outside the text areas to trigger rendering.</p>
+    <ol *ngFor="let anno of rawAnnotations; let i = index">
+      <li><textarea id="asd" [value]="rawAnnotations[i]|json" (change)="updateAnnotation(i, $event)"
+                    (input)="adjustSize($event)" rows="{{countRows(rawAnnotations[i]|json)}}"
+                    cols="60"></textarea></li>
+    </ol>
+  </div>
+  <div *ngIf="!rawAnnotations"></div>
+</div>
+
+<ngx-extended-pdf-viewer
+  [src]="pdfUrl"
+  [textLayer]="true"
+  [showHandToolButton]="true"
+  [handTool]="false"
+  [minifiedJSLibraries]="!isLocalhost"
+>
+</ngx-extended-pdf-viewer>

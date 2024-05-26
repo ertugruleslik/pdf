@@ -1,0 +1,72 @@
+{
+  "name": "ngx-pdf-viewer-demo",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "npm run showcase && cd ../extended-pdf-viewer && ng s -o",
+    "prebuild": "ts-node compile-sass.ts && node extract-versions.js",
+    "build": "npm run showcase",
+    "unix-package": "npm run prebuild && ng b ngx-extended-pdf-viewer && rm -r dist && ng-packagr -p projects/ngx-extended-pdf-viewer/ng-package.json && cd projects/ngx-extended-pdf-viewer && npm run build && cd ../..",
+    "showcase": "npm run prebuild && npm run unix-package && rm -r -f ../extended-pdf-viewer-showcase/node_modules/ngx-extended-pdf-viewer && cp -R dist/ngx-extended-pdf-viewer ../extended-pdf-viewer-showcase/node_modules/ngx-extended-pdf-viewer",
+    "issue": "npm run unix-package && rm -r ../../ngx-beyondjava/node_modules/ngx-extended-pdf-viewer && cp -R dist/ngx-extended-pdf-viewer ../../ngx-beyondjava/node_modules/ngx-extended-pdf-viewer",
+    "win-package": "npm run prebuild && ng b ngx-extended-pdf-viewer && rmdir dist /S && ng-packagr -p projects/ngx-extended-pdf-viewer/ng-package.json",
+    "release": "npm run unix-package && cd dist/ngx-extended-pdf-viewer && npm publish && cd .. && cd .. && ./createTag.sh && node ./increase-version-number.js",
+    "quick": "cd ../ngx-extended-pdf-viewer && ./updateMozillasPdfViewer.sh quick && npm run showcase && cd ../extended-pdf-viewer-showcase && npm run prebuild && ng s --host 0.0.0.0",
+    "full": "npm run prebuild && cd ../ngx-extended-pdf-viewer && ./updateMozillasPdfViewer.sh && npm run showcase && cd ../extended-pdf-viewer-showcase && npm run prebuild && ng s --host 0.0.0.0",
+    "demo": "cd ../ngx-extended-pdf-viewer && ./updateMozillasPdfViewer.sh && npm run showcase && rm -f -r ../demo/node_modules/ngx-extended-pdf-viewer && cp -R dist/ngx-extended-pdf-viewer ../demo/node_modules/ngx-extended-pdf-viewer && cd ../demo && ng s -o",
+    "ts": "cd ../ngx-extended-pdf-viewer && npm run showcase && cd ../extended-pdf-viewer-showcase && ng s --host 0.0.0.0",
+    "config": "ng build ngx-extended-pdf-viewer && cd projects/ngx-extended-pdf-viewer && npm run build && cd ../.. && npm link ./dist/ngx-extended-pdf-viewer && cd ../test && git stash && npm link ngx-extended-pdf-viewer && ng generate ngx-extended-pdf-viewer:config --name schubidoo",
+    "add": "ng build ngx-extended-pdf-viewer && cd projects/ngx-extended-pdf-viewer && npm run build && cd ../.. && npm link ./dist/ngx-extended-pdf-viewer && cd ../test && git stash && npm i && npm link ngx-extended-pdf-viewer && ng add ngx-extended-pdf-viewer",
+    "test:ng12": "cd compatibility-tests/Angular12 && ./test.sh",
+    "test:ng13": "cd compatibility-tests/Angular13 && ./test.sh",
+    "test:ng14": "cd compatibility-tests/Angular14 && ./test.sh",
+    "test:ng15": "cd compatibility-tests/Angular15 && ./test.sh",
+    "test:ng16": "cd compatibility-tests/Angular16 && ./test.sh",
+    "test:ng16-esbuild": "cd compatibility-tests/Angular16-esbuild && ./test.sh",
+    "test:ng17": "cd compatibility-tests/Angular17 && ./test.sh",
+    "jest": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.1.1",
+    "@angular/common": "^17.1.1",
+    "@angular/compiler": "^17.1.1",
+    "@angular/core": "^17.1.1",
+    "@angular/forms": "^17.3.0",
+    "@angular/platform-browser": "^17.1.1",
+    "@angular/platform-browser-dynamic": "^17.3.0",
+    "@schematics/angular": "^17.1.1",
+    "@types/estree": "^1.0.5",
+    "@types/trusted-types": "^2.0.7",
+    "json-schema-traverse": "^1.0.0",
+    "rxjs": "^7.8.1",
+    "zone.js": "^0.14.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.0",
+    "@angular/cli": "^17.3.0",
+    "@angular/compiler-cli": "^17.3.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.28",
+    "copyfiles": "^2.4.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-preset-angular": "^14.0.3",
+    "ng-packagr": "^17.3.0",
+    "properties-reader": "^2.3.0",
+    "sass": "^1.72.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "tslint": "^6.1.3",
+    "typescript": "<5.3.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.3"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
+    ]
+  }
+}

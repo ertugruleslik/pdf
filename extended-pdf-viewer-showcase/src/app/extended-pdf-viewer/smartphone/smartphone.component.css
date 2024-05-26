@@ -1,0 +1,22 @@
+::ng-deep button#print,
+::ng-deep button#print * {
+  display: block !important;
+}
+
+::ng-deep button#download,
+::ng-deep button#download * {
+  display: block !important;
+}
+
+::ng-deep #toolbarViewerMiddle {
+  display: none;
+}
+
+.mat-mdc-radio-button {
+  padding-top: 5px;
+  display: block;
+}
+
+.distance-top {
+  padding-top: 8px;
+}

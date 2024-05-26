@@ -1,0 +1,10 @@
+```html
+  <ngx-extended-pdf-viewer
+     [src]="'/assets/pdfs/Portugues-para-principiantes-1538054164.pdf'"
+     [textLayer]="true"
+     (textLayerRendered)=highlightWords($event);
+     [page]="9"
+     [showHandToolButton]="true"
+     [handTool]="false">
+  </ngx-extended-pdf-viewer>
+```

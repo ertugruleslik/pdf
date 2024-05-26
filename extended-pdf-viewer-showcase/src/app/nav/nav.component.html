@@ -1,0 +1,15 @@
+<div *ngIf="hideMenu">
+
+</div>
+
+<div *ngIf="!hideMenu">
+
+  <mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav-content>
+      <div class="with-border">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,75 @@
+<div class="flex-container-column fill-container">
+  <div class="flex-container-row"  *ngIf="!fullscreen">
+  <mat-card appearance="outlined" class="distance16 mat-elevation-z8 margin-right" style="flex: 1 1 100%; box-sizing: border-box; max-width:40%;">
+    <mat-tab-group>
+      <mat-tab label="Signatures without verification">
+        <p><b>Using this feature is dangerous!</b>
+        </p>
+        <p>
+          PDF forms can bear a digital signature. Such a signature confirms that the PDF that
+          it's been created by the author (and not someone else).
+        </p>
+        <p>
+          However, ngx-extended-pdf-viewer <b>does not verify the validity</b> of the signature.
+          One of the test files has an invalid signature. The signature is displayed without
+          any hint it's faulty. So use this feature carefully! Do not show the
+          signature unless you're 100% sure it's valid. Otherwise, users may draw wrong conclusions.
+        </p>
+        <p>To activate signatures, you must set the attribute <code>showUnverifiedSignatures</code>.
+        </p>
+        <mat-checkbox class="margin" [(ngModel)]="showSignature">show signature</mat-checkbox>
+      </mat-tab>
+      <mat-tab label="Unverified signatures and security considerations">
+        <p>
+          The base library, pdf.js, has only recently activated support for signatures.
+          The team had a long-standing policy not to support signature because it's difficult
+          to verify signatures.
+        </p>
+        <p>
+          ngx-extended-pdf-viewer prefers to err on the safe side. By default, signatures are
+          <b>not</b> shown. You can activate them, but then your users see a red bar containing
+          a warning. I hope that's fine for you. If you're really sure what you're doing,
+          you can hide the red bar with a CSS rule.
+        </p>
+        <p>
+          But I ask you not to do so. It's better to
+          play it safe. Show the signature, but also inform your users you can't guarantee them
+          it's not a fake. The warning also tells your users how to verify the signature: most
+          desktop PDF viewer applications check this. In particular, just open the file in
+          Acrobat Reader to see if the signature is valid or fraud.
+        </p>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+  <mat-card appearance="outlined" class="distance16 mat-elevation-z8 progress" style="flex: 1 1 100%; box-sizing: border-box; max-width:58%;">
+      <mat-tab-group>
+        <mat-tab label="HTML template">
+         <app-ie11-markdown ngPreserveWhitespaces src="/assets/extended-pdf-viewer/signatures/html.md"> </app-ie11-markdown>
+        </mat-tab>
+      <mat-tab label="Typescript">
+       <app-ie11-markdown ngPreserveWhitespaces src="/assets/extended-pdf-viewer/signatures/ts.md"> </app-ie11-markdown>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
+
+<mat-card appearance="outlined" class="mat-elevation-z8 use-available-height" [class.distance16]="!fullscreen">
+  <button mat-button (click)="fullscreen=!fullscreen" style="display:none;float:right;height: 24px;line-height: 24px;min-width:24px;padding:0;margin-top:-4px">
+    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z" />
+    </svg>
+  </button>
+  <small
+    >Copyright hint: the PDF file is published
+    <a href="https://github.com/stephanrauh/ngx-extended-pdf-viewer/issues/514#issuecomment-720089147" target="#">with kind permission by Cristiano Rafael Steffens</a>.
+  </small>
+  <ngx-extended-pdf-viewer
+    *ngIf="showPdf"
+    [src]="'/assets/pdfs/unverified-signature.pdf'"
+    [height]="'90vh'"
+    [showUnverifiedSignatures]="showSignature"
+    [minifiedJSLibraries]="!isLocalhost"
+  >
+  </ngx-extended-pdf-viewer>
+</mat-card>
+</div>

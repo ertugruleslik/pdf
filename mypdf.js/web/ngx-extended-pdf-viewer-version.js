@@ -1,0 +1,1 @@
+export const ngxExtendedPdfViewerVersion = '19.4.2';

@@ -1,0 +1,16 @@
+```html
+ <ngx-extended-pdf-viewer
+    [src]="src"
+    [(handTool)]="handTool"
+    [height]="'auto'"
+    [(page)]="page"
+    [(pageLabel)]="pageLabel"
+    [(rotation)]="rotation"
+    [(scrollMode)]="scrollMode"
+    [(sidebarVisible)]="sidebarVisible"
+    [(activeSidebarView)]="activeSidebarView"
+    [(spread)]="spreadMode"
+    [(zoom)]="zoom"
+    (currentZoomFactor)="currentZoomFactor">
+</ngx-extended-pdf-viewer>
+```

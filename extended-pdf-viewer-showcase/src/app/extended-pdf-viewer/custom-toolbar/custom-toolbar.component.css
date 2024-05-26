@@ -1,0 +1,25 @@
+.radio {
+    border-radius: unset;
+    margin-top:8px;
+    margin-left: 5px;
+}
+
+.new-tab {
+  width: 20px;
+}
+
+.new-tab {
+  fill: white;
+}
+
+.padding-left {
+  padding-left: 1em;
+}
+
+.no-float, .no-float * {
+  float: none !important;
+}
+
+::ng-deep .no-float #findInput {
+  width: 95%;
+}
