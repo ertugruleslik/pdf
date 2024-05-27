@@ -139,12 +139,12 @@ const routes: Routes = [
   { path: 'zoom', component: ZoomComponent },
   {
     path: '**',
-    redirectTo: 'simple',
+    redirectTo: '',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  // imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class ExtendedPdfViewerRoutingModule {}
